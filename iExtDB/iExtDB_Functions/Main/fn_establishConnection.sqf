@@ -11,6 +11,7 @@
 	-
 */
 
+
 if (iExtDB_Setup) exitWith {
 	["Already Setup"] call iExtDB_fnc_log;
 };
@@ -31,11 +32,11 @@ if (_version isEqualTo "") exitWith {
 	["Version not found"] call iExtDB_fnc_log;
 };
 
-[format ["Version %1 found",_status]] all iExtDB_fnc_log;
+[format ["Version %1 found",_status]] call iExtDB_fnc_log;
 
 _add_database = "extDB3" callExtension format ["9:ADD_DATABASE:%1",_database];
 
-[format ["Database %1",_database]] all iExtDB_fnc_log;
+[format ["Database %1",_database]] call iExtDB_fnc_log;
 
 _add_database_protocol = "extDB3" callExtension format ["9:ADD_DATABASE_PROTOCOL:%1,%2,%3,%4",_database,_protocol,_protocol_id,_protocol_name];
 
